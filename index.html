@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>flv.js</title>
+	<style>
+body {
+	background-color: #191919
+}
+.m {
+	width: 960px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+</style>
+	</head>
+
+	<body>
+    <div class="m">
+      <video id="videoElement" controls preload="auto" width="960" height="400"
+      poster="auto" data-setup="{}"></video>
+    
+      <script src="js/flv.min.js"></script> 
+      <script>
+         if (flvjs.isSupported()) {
+              var videoElement = document.getElementById('videoElement');
+              var flvPlayer = flvjs.createPlayer({
+                  type: 'flv',
+                  url: '2.flv'
+              });
+              flvPlayer.attachMediaElement(videoElement);
+              flvPlayer.load();
+              flvPlayer.play();
+          }
+      </script>
+    </div>
+	</object>
+</body>
+</html>
